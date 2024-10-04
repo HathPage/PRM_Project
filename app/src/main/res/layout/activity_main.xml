@@ -9,7 +9,7 @@
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="#F2FAFA"
+        android:background="#F2EDF2"
         tools:context=".MainActivity">
 
         <LinearLayout
@@ -37,8 +37,8 @@
 
             <ImageView
                 android:id="@+id/logo"
-                android:layout_width="@dimen/_40sdp"
-                android:layout_height="@dimen/_40sdp"
+                android:layout_width="@dimen/_45sdp"
+                android:layout_height="@dimen/_45sdp"
                 android:background="@drawable/logo_round" />
 
             <TextView
@@ -46,7 +46,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text=" T"
-                android:textSize="@dimen/_18sdp"
+                android:textSize="@dimen/_20sdp"
                 android:textColor="#4CAF50"
                 android:textStyle="bold" />
 
@@ -54,7 +54,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Food"
-                android:textSize="@dimen/_18sdp"
+                android:textSize="@dimen/_20sdp"
                 android:textStyle="bold" />
 
             <View
@@ -75,7 +75,9 @@
             android:id="@+id/img_advertise"
             android:layout_width="match_parent"
             android:layout_height="0dp"
-            android:layout_margin="@dimen/_25sdp"
+            android:layout_marginStart="@dimen/_25sdp"
+            android:layout_marginEnd="@dimen/_25sdp"
+            android:layout_marginTop="@dimen/_15sdp"
             android:background="@drawable/img_advertise_burger"
             app:layout_constraintDimensionRatio="17:8"
             app:layout_constraintTop_toBottomOf="@+id/header"
@@ -93,28 +95,92 @@
             app:layout_constraintDimensionRatio="26:3"
             app:layout_constraintTop_toBottomOf="@+id/img_advertise"
             android:background="@drawable/search_bar" />
+        <RelativeLayout
+            android:id="@+id/bestseller"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/_50sdp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/search_bar"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:layout_marginStart="@dimen/_25sdp"
+            android:layout_marginEnd="@dimen/_25sdp"
+            >
+        <TextView
+            android:id="@+id/txt_bestseller"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:text="Best sellers"
+            android:textStyle="bold"
+            android:textSize="@dimen/_17sdp"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentBottom="true"
+            android:gravity="center_vertical"
+            />
+        <ImageView
+            android:layout_width="@dimen/_50sdp"
+            android:layout_height="@dimen/_50sdp"
+            android:paddingTop="@dimen/_7sdp"
+            android:src="@drawable/icon_fire"
+            android:layout_toEndOf="@+id/txt_bestseller"
+            />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="See all > "
+                android:textStyle="italic"
+                android:layout_alignParentEnd="true"
+                android:layout_alignParentTop="true"
+                android:layout_alignParentBottom="true"
+                android:gravity="center_vertical"
+                />
 
+        </RelativeLayout>
         <RelativeLayout
             android:id="@+id/rl_bestseller"
             android:layout_width="match_parent"
-            android:layout_height="@dimen/_200sdp"
-            app:layout_constraintTop_toBottomOf="@+id/search_bar"
+            android:layout_height="@dimen/_180sdp"
+            app:layout_constraintTop_toBottomOf="@+id/bestseller"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            android:layout_margin="@dimen/_25sdp">
-            <RelativeLayout
+            android:layout_marginStart="@dimen/_25sdp"
+            >
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/rv_bestseller"
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"
-                >
-                <ImageView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-
-                    />
-            </RelativeLayout>
+                tools:listitem="@layout/bestseller_item"
+                app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                android:orientation="horizontal"
+                />
         </RelativeLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/_55sdp"
+            android:orientation="horizontal"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            >
 
+            <ImageButton
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:background="@drawable/icon_home2" />
+
+            <ImageButton
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:background="@drawable/icon_search2" />
+
+            <ImageButton
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:background="@drawable/icon_cart2" />
+
+        </LinearLayout>
     </androidx.constraintlayout.widget.ConstraintLayout>
 </ScrollView>
