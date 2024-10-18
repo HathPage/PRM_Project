@@ -149,10 +149,9 @@
                 android:id="@+id/rv_bestseller"
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
-                tools:listitem="@layout/bestseller_item"
-                app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
                 android:orientation="horizontal"
-                />
+                app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                tools:listitem="@layout/bestseller_item" />
         </RelativeLayout>
         <LinearLayout
             android:layout_width="match_parent"

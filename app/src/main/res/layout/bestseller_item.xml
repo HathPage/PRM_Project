@@ -3,15 +3,12 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:id="@+id/bestseller_item"
     android:layout_marginEnd="@dimen/_10sdp"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content">
     <RelativeLayout
         android:layout_width="@dimen/_100sdp"
         android:layout_height="@dimen/_180sdp"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
         >
     <RelativeLayout
         android:layout_width="match_parent"
@@ -70,14 +67,14 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="129"
-                android:textSize="@dimen/_15sdp"
+                android:textSize="@dimen/_12sdp"
                 android:textStyle="bold|italic"
                 android:textColor="#9c3738"
                 />
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text=",000 đ"
+                android:text="đ"
                 android:textSize="@dimen/_9sdp"
                 android:textColor="#9c3738"
                 android:textStyle="bold|italic"
